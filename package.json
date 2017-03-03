@@ -1,7 +1,7 @@
 {
-  "name": "parse-domain",
+  "name": "ds-parse-url",
   "version": "1.1.0",
-  "description": "Splits an url into sub-domain, domain and effective top-level-domain",
+  "description": "Splits an url into sub-domain, domain and effective top-level-domain and also parses lax urls in one step",
   "main": "./lib/parseDomain.js",
   "scripts": {
     "test": "mocha -R spec",
@@ -24,16 +24,45 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/peerigon/parse-domain.git"
+    "url": "https://github.com/direktspeed/ds-parse-url.git"
   },
-  "author": "peerigon <developers@peerigon.com>",
-  "license": "Unlicense",
-  "dependencies": {},
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://github.com/sindresorhus/url-parse-lax"
+  },
+  "contributors": [
+    {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "https://github.com/sindresorhus/url-parse-lax"
+    },
+    {
+      "name": "peerigon",
+      "email": "developers@peerigon.com",
+      "url": "https://github.com/peerigon/parse-domain"
+    }
+  ],
+  "license": "(MIT OR Apache-2.0)",
+  "dependencies": {
+    "debug": "^2.6.1",
+    "url-parse-lax": "^1.0.0"
+  },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "eslint": "^3.15.0",
-    "eslint-config-peerigon": "^9.0.0",
+    "chai": "4.0.0-canary.1",
+    "eslint": "^3.17.0",
     "eslint-plugin-jsdoc": "^2.4.0",
+    "has-flag": "^2.0.0",
     "mocha": "^3.2.0"
+  },
+  "resolutions": {
+    "type-detect": "4.0.0",
+    "estraverse": "4.2.0",
+    "glob": "7.1.1",
+    "lodash": "4.17.4",
+    "supports-color": "3.1.2",
+    "acorn": "4.0.4",
+    "string-width": "2.0.0",
+    "is-fullwidth-code-point": "2.0.0"
   }
 }
