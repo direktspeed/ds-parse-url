@@ -1,7 +1,28 @@
 parse-domain
 ============
 **Splits a URL into sub-domain, domain and the top-level domain.**
+This method splits the hostname into {domain: "", type: "", subdomain: ""}
 
+function splitHostname() {
+        var result = {};
+        var regexParse = new RegExp('([a-z\-0-9]{2,63})\.([a-z\.]{2,5})$');
+        var urlParts = regexParse.exec(window.location.hostname);
+        result.domain = urlParts[1];
+        result.type = urlParts[2];
+        result.subdomain = window.location.hostname.replace(result.domain + '.' + result.type, '').slice(0, -1);;
+        return result;
+}
+
+console.log(splitHostname());
+This method only returns the subdomain as a string:
+
+function getSubdomain() {
+        var regexParse = new RegExp('[a-z\-0-9]{2,63}\.[a-z\.]{2,5}$');
+        var urlParts = regexParse.exec(window.location.hostname);
+        return window.location.hostname.replace(urlParts[0],'').slice(0, -1);
+}
+
+console.log(getSubdomain());
 [![](https://img.shields.io/npm/v/parse-domain.svg)](https://www.npmjs.com/package/parse-domain)
 [![](https://img.shields.io/npm/dm/parse-domain.svg)](https://www.npmjs.com/package/parse-domain)
 [![Dependency Status](https://david-dm.org/peerigon/parse-domain.svg)](https://david-dm.org/peerigon/parse-domain)
@@ -102,7 +123,7 @@ Returns `null` if `url` has an unknown tld or if it's not a valid url.
     // A list of custom tlds that are first matched against the url.
     // Useful if you also need to split internal URLs like localhost.
     customTlds: RegExp|Array<string>,
-    
+
     // There are lot of private domains that act like top-level domains,
     // like blogspot.com, googleapis.com or s3.amazonaws.com.
     // By default, these domains would be split into:

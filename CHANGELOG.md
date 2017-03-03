@@ -1,5 +1,7 @@
 Changelog
 ---------
+### 1.2.x
+- Update code style merge with url-parse lex 
 
 ### 1.1.0
 - Fix parsing of URLs that have an @ character in the path [#13](https://github.com/peerigon/parse-domain/issues/13)
