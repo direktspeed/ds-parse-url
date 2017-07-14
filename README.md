@@ -1,5 +1,7 @@
 parse-domain
 ============
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/direktspeed/ds-parse-url.svg)](https://greenkeeper.io/)
 **Splits a URL into sub-domain, domain and the top-level domain.**
 
 [![](https://img.shields.io/npm/v/parse-domain.svg)](https://www.npmjs.com/package/parse-domain)
